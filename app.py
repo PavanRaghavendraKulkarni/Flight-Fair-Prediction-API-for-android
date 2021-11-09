@@ -304,10 +304,14 @@ def predict(data):
         output = round(prediction[0], 2)
         return output
 
-
+@app.route('/')
+@cross_origin()
+def index():
+    return render_template('index.html')
 
 
 @app.route('/get', methods=['GET'])
+@cross_origin()
 def get_task():
     parameters = request.args.to_dict()
     predicted_value=predict(parameters)
