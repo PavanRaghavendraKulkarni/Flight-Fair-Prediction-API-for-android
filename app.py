@@ -310,7 +310,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/get', methods=['GET'])
+@app.route('/get', methods=['GET','POST'])
 @cross_origin()
 def get_task():
     parameters = request.args.to_dict()
