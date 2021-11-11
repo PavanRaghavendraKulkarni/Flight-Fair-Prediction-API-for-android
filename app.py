@@ -315,7 +315,7 @@ def index():
 def get_task():
     parameters = request.args.to_dict()
     predicted_value=predict(parameters)
-    return str(predicted_value), 200
+    return jsonify ({"message" :str(predicted_value)}), 200
 
 
 
